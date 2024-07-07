@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import{Row, Col, Navbar, Form, FormControl, Button, Dropdown, Container} from "react-bootstrap";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+function App(){
+  return(
+   <>
+   <Navbar bg="light" expand="lg" className="mb-4">
+    <Container>
+      <Navbar.Brand href="/" className="fw-bold fs-4">
+        News APP
+      </Navbar.Brand>
+    </Container>
+   </Navbar>
+   </>
+  )
 }
-
-export default App;
+export default App
