@@ -1,8 +1,18 @@
 import{Row, Col, Nav, Navbar, Form, FormControl, Button, Dropdown, Container} from "react-bootstrap";
+import NewsList from "./components/NewsList";
+import { useState } from "react";
 
 
 
 function App(){
+  const [category,setCategory] = useState("");
+  const [searchTerm,setSearchTerm] = useState("");
+
+  const handleCategoryClick = (category) =>{
+   setCategory(category);
+   setSearchTerm("");
+  };
+
   return(
    <>
    <Navbar bg="light" expand="lg" className="mb-4">
@@ -20,11 +30,11 @@ function App(){
                 Categories
                </Dropdown.Toggle>
                <Dropdown.Menu>
-                <Dropdown.Item>word</Dropdown.Item>
-                <Dropdown.Item>Business</Dropdown.Item>
-                <Dropdown.Item>Technology</Dropdown.Item>
-                <Dropdown.Item>Sports</Dropdown.Item>
-                <Dropdown.Item>Entertainment</Dropdown.Item>
+                <Dropdown.Item onClick={() => handleCategoryClick("world")}>word</Dropdown.Item>
+                <Dropdown.Item onClick={() => handleCategoryClick("business")}>Business</Dropdown.Item>
+                <Dropdown.Item onClick={() => handleCategoryClick("technology")}>Technology</Dropdown.Item>
+                <Dropdown.Item onClick={() => handleCategoryClick("sport")}>Sports</Dropdown.Item>
+                <Dropdown.Item onClick={() => handleCategoryClick("Entertainment")}>Entertainment</Dropdown.Item>
                 
                </Dropdown.Menu>
              </Dropdown>
@@ -59,7 +69,7 @@ function App(){
       </Col>
 
       <Col xs={12} md={9}>
-      NEWS
+      <NewsList category={category} searchTerm={searchTerm}/>
       </Col>
     </Row>
    </Container>
