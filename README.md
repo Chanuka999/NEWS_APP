@@ -14,3 +14,7 @@ Our new app, built using ReactJS, harnesses the power of the gnews.io API to bri
     ```bash
     npm install bootstrap
     ```
+4. Start the server:
+    ```bash
+    npm start
+    ```
