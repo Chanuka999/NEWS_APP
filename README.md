@@ -3,7 +3,7 @@ Our new app, built using ReactJS, harnesses the power of the gnews.io API to bri
 ###Setup
 1. Clone the repository:
     ```bash
-    git clone 
+    git clone https://github.com/Chanuka999/NEWS_APP.git
     cd my-app
     ```
 2. Install dependencies:
