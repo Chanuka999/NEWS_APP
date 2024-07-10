@@ -13,6 +13,12 @@ function App(){
    setSearchTerm("");
   };
 
+ const handleSearch = (event) =>{
+  event.preventDefault();
+  setCategory("");
+  setSearchTerm(event.target.search.value);
+ }
+
   return(
    <>
    <Navbar bg="light" expand="lg" className="mb-4">
@@ -40,7 +46,7 @@ function App(){
              </Dropdown>
         </Nav>
 
-          <Form className="d-flex">
+          <Form onSubmit={handleSearch} className="d-flex">
             <FormControl 
             type="text"
              placeholder="search"
@@ -60,11 +66,11 @@ function App(){
       <Col xs={12} md={3}>
           <h5>Categories</h5> 
           <Nav className="flex-column">
-            <Nav.Link>world</Nav.Link>
-            <Nav.Link>Business</Nav.Link>
-            <Nav.Link>Tecnologies</Nav.Link>
-            <Nav.Link>Sports</Nav.Link>
-            <Nav.Link>Entertainment</Nav.Link>
+            <Nav.Link onClick={() => handleCategoryClick("world")}>world</Nav.Link>
+            <Nav.Link onClick={() => handleCategoryClick("business")}>Business</Nav.Link>
+            <Nav.Link onClick={() => handleCategoryClick("technologies")}>Tecnologies</Nav.Link>
+            <Nav.Link onClick={() => handleCategoryClick("sports")}>Sports</Nav.Link>
+            <Nav.Link onClick={() => handleCategoryClick("Entertainment")}>Entertainment</Nav.Link>
             </Nav>     
       </Col>
 
